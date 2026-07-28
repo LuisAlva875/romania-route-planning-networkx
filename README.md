@@ -37,9 +37,9 @@ Romania-Shortest-Path-Finder/
 │
 ├── assets/
 │   └── images/
-│       ├── main_interface.jpg
-│       ├── shortest_route.jpg
-│       ├── second_route.jpg
+│       ├── interface.jpg
+│       ├── route_arad_bucharest.jpg
+│       ├── route_timisoara_bucharest.jpg
 │       ├── invalid_city.jpg
 │       └── same_origin_destination.jpg
 │
@@ -140,33 +140,33 @@ Total Cost:
 
 # Screenshots
 
-## 1. Main Interface
+## 1. Application Interface
 
-The application starts by displaying a graphical interface where the user can enter the origin and destination cities before searching for the shortest route.
+The application starts with a simple graphical interface where the user specifies the origin city and destination city before searching for the optimal route.
 
-![Main Interface](assets/images/main_interface.jpg)
-
----
-
-## 2. Shortest Route Found
-
-Example of a successful search showing the shortest route from **Arad** to **Bucharest**, including the total travel cost.
-
-![Shortest Route](assets/images/shortest_route.jpg)
+![Application Interface](assets/images/interface.jpg)
 
 ---
 
-## 3. Another Route Example
+## 2. Shortest Route: Arad → Bucharest
 
-A second successful search demonstrating the shortest path computation between different cities in the Romania road map.
+Example showing the shortest route from **Arad** to **Bucharest**, together with the total travel cost computed by the application.
 
-![Second Route Example](assets/images/second_route.jpg)
+![Route Arad Bucharest](assets/images/route_arad_bucharest.jpg)
+
+---
+
+## 3. Shortest Route: Timisoara → Bucharest
+
+A second example demonstrating the shortest path calculation between **Timisoara** and **Bucharest**.
+
+![Route Timisoara Bucharest](assets/images/route_timisoara_bucharest.jpg)
 
 ---
 
 ## 4. Invalid City Validation
 
-If the user enters a city that does not exist in the graph, the application displays an informative error message instead of attempting the search.
+If the user enters a city that does not exist in the Romania road network, the application displays an informative error message instead of performing the search.
 
 ![Invalid City](assets/images/invalid_city.jpg)
 
@@ -174,9 +174,9 @@ If the user enters a city that does not exist in the graph, the application disp
 
 ## 5. Same Origin and Destination
 
-When the origin and destination cities are identical, the application notifies the user instead of calculating an unnecessary route.
+When the origin and destination cities are identical, the application informs the user that no route calculation is necessary.
 
-![Same Origin and Destination](assets/images/same_origin_destination.jpg)
+![Same Origin Destination](assets/images/same_origin_destination.jpg)
 
 ---
 
