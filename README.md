@@ -1,37 +1,25 @@
-# Romania Map Shortest Path Finder
+# Romania Shortest Path Finder
 
-A Python application that models the classic Romania road map as a weighted graph and provides an interactive graphical interface to calculate the shortest route between two cities. The project uses the NetworkX library for graph representation and shortest path computation, while Tkinter provides a simple desktop GUI for user interaction.
+A Python application that models the classic **Romania Road Map** as a weighted graph and computes the shortest route between two cities through a simple graphical user interface.
 
----
-
-## Overview
-
-This project represents the well-known Romania map used in Artificial Intelligence courses as a weighted, undirected graph. Each city is represented as a node, and each road is represented as an edge with an associated distance.
-
-Users can select an origin and destination city through a graphical interface, and the application computes:
-
-- The shortest route between both cities.
-- The total travel distance.
-- Error handling for invalid cities and impossible routes.
-
-The shortest path is calculated using the algorithm implemented internally by the NetworkX library for weighted graphs.
+The project uses the **NetworkX** library to represent the graph and calculate the minimum-cost route according to road distances, while **Tkinter** provides an intuitive desktop interface for user interaction.
 
 ---
 
-## Features
+# Features
 
-- Representation of the Romania road map as a weighted graph.
-- Graphical user interface developed with Tkinter.
-- Shortest path computation between any two connected cities.
-- Automatic total distance calculation.
-- Validation of user input.
-- Error handling for invalid cities.
-- Detection when origin and destination are identical.
-- Simple and intuitive interface.
+- Weighted graph representation of the Romania road map.
+- Shortest path computation between two cities.
+- Automatic travel cost calculation.
+- Desktop graphical interface using Tkinter.
+- Validation of invalid city names.
+- Validation when origin and destination are the same.
+- Educational implementation of graph search on weighted graphs.
+- Clean and easy-to-use interface.
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 - Python 3
 - NetworkX
@@ -39,90 +27,104 @@ The shortest path is calculated using the algorithm implemented internally by th
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
-Romania-Map-Shortest-Path-Finder/
+Romania-Shortest-Path-Finder/
 │
 ├── src/
-│   └── romania_shortest_path.py
+│   └── romania_shortest_path_finder.py
 │
 ├── assets/
 │   └── images/
-│       ├── main_window.png
-│       ├── route_example.png
-│       └── invalid_city.png
+│       ├── main_interface.jpg
+│       ├── shortest_route.jpg
+│       ├── second_route.jpg
+│       ├── invalid_city.jpg
+│       └── same_origin_destination.jpg
 │
+├── README.md
 ├── LICENSE
-├── .gitignore
-└── README.md
+└── .gitignore
 ```
 
 ---
 
-## Graph Representation
+# Algorithm Overview
 
-The application models the Romania transportation network as an undirected weighted graph.
+The application models the Romania road map as an **undirected weighted graph**.
 
-- Vertices represent cities.
-- Edges represent roads.
-- Edge weights correspond to road distances.
+- Each city is represented as a graph node.
+- Each road is represented as a weighted edge.
+- The edge weight corresponds to the distance between two cities.
+
+After the user enters an origin and a destination city, the application computes the shortest route using NetworkX's weighted shortest path algorithm and calculates the total travel distance by summing the weights of each road along the selected path.
+
+---
+
+# Program Workflow
+
+1. Create an empty graph.
+2. Add every city as a graph node.
+3. Add every road with its corresponding distance.
+4. Display the graphical interface.
+5. Read the origin city.
+6. Read the destination city.
+7. Validate user input.
+8. Compute the shortest path.
+9. Calculate the total travel cost.
+10. Display the resulting route.
+
+---
+
+# Graph Representation
+
+The project represents the classical Romania map frequently used in Artificial Intelligence and Graph Theory courses.
+
+Each node corresponds to a city.
+
+Each weighted edge represents a road connecting two cities.
 
 Example:
 
 ```
-Arad ──140── Sibiu
- │
+Arad ----140---- Sibiu
+ |
 118
- │
+ |
 Timisoara
 ```
 
 ---
 
-## Included Cities
+# Running the Project
 
-- Arad
-- Bucharest
-- Craiova
-- Dobreta
-- Eforie
-- Fagaras
-- Giurgiu
-- Hirsova
-- Iasi
-- Lugoj
-- Mehadia
-- Neamt
-- Oradea
-- Pitesti
-- Rimnicu Vilcea
-- Sibiu
-- Timisoara
-- Urziceni
-- Vaslui
-- Zerind
+Run the application with:
+
+```bash
+python romania_shortest_path_finder.py
+```
+
+A graphical interface will open where the user can enter the origin city and destination city.
 
 ---
 
-## Example
+# Example
 
+Input
+
+```
 Origin:
-
-```
 Arad
-```
 
 Destination:
-
-```
 Bucharest
 ```
 
-Possible output:
+Output
 
 ```
-Shortest route:
+Shortest Route
 
 Arad
 → Sibiu
@@ -130,165 +132,125 @@ Arad
 → Pitesti
 → Bucharest
 
-Total cost: 418
+Total Cost:
+418
 ```
 
 ---
 
-## How It Works
+# Screenshots
 
-1. The Romania map is loaded into a NetworkX weighted graph.
-2. Cities become graph nodes.
-3. Roads become weighted edges.
-4. The user enters the origin city.
-5. The user enters the destination city.
-6. NetworkX computes the shortest weighted path.
-7. The application displays:
-   - Complete route.
-   - Total distance.
+## 1. Main Interface
+
+The application starts by displaying a graphical interface where the user can enter the origin and destination cities before searching for the shortest route.
+
+![Main Interface](assets/images/main_interface.jpg)
 
 ---
 
-## Algorithm
+## 2. Shortest Route Found
 
-The project uses the shortest path algorithm provided by NetworkX for weighted graphs.
+Example of a successful search showing the shortest route from **Arad** to **Bucharest**, including the total travel cost.
 
-For positive edge weights, NetworkX internally applies Dijkstra's shortest path algorithm.
-
-Time Complexity:
-
-- **O((V + E) log V)**
-
-Where:
-
-- **V** = number of vertices
-- **E** = number of edges
+![Shortest Route](assets/images/shortest_route.jpg)
 
 ---
 
-## User Interface
+## 3. Another Route Example
 
-The graphical interface includes:
+A second successful search demonstrating the shortest path computation between different cities in the Romania road map.
 
-- Origin city input.
-- Destination city input.
-- Search button.
-- Route visualization.
-- Total distance display.
-- Error dialogs for invalid inputs.
+![Second Route Example](assets/images/second_route.jpg)
 
 ---
 
-## Error Handling
+## 4. Invalid City Validation
 
-The application validates:
+If the user enters a city that does not exist in the graph, the application displays an informative error message instead of attempting the search.
 
-- Nonexistent cities.
-- Origin equal to destination.
-- Disconnected paths (if applicable).
+![Invalid City](assets/images/invalid_city.jpg)
 
 ---
 
-## Installation
+## 5. Same Origin and Destination
 
-Clone the repository:
+When the origin and destination cities are identical, the application notifies the user instead of calculating an unnecessary route.
 
-```bash
-git clone https://github.com/yourusername/Romania-Map-Shortest-Path-Finder.git
+![Same Origin and Destination](assets/images/same_origin_destination.jpg)
+
+---
+
+# Complexity Analysis
+
+Let:
+
+- **V** = Number of cities
+- **E** = Number of roads
+
+The shortest path is computed using the weighted shortest path algorithm implemented internally by NetworkX.
+
+### Time Complexity
+
+```
+O((V + E) log V)
 ```
 
-Go to the project directory:
+### Space Complexity
 
-```bash
-cd Romania-Map-Shortest-Path-Finder
 ```
-
-Install dependencies:
-
-```bash
-pip install networkx
-```
-
-Run the application:
-
-```bash
-python src/romania_shortest_path.py
+O(V + E)
 ```
 
 ---
 
-## Screenshots
+# Educational Objectives
 
-### Main Window
+This project demonstrates practical applications of:
 
-```
-assets/images/main_window.png
-```
-
-Displays the graphical interface with origin and destination input fields.
-
----
-
-### Route Calculation
-
-```
-assets/images/route_example.png
-```
-
-Shows a successfully computed shortest route and its total travel cost.
+- Graph Theory
+- Weighted Graphs
+- Shortest Path Algorithms
+- Route Planning
+- Path Finding
+- Graph Traversal
+- Artificial Intelligence Fundamentals
+- Desktop GUI Development with Tkinter
+- Python Programming
 
 ---
 
-### Invalid City
+# Repository Topics
 
 ```
-assets/images/invalid_city.png
+python
+networkx
+graphs
+graph-theory
+weighted-graph
+shortest-path
+pathfinding
+route-planning
+artificial-intelligence
+search-algorithms
+tkinter
+desktop-application
+romania-map
+algorithms
+computer-science
 ```
 
-Illustrates the validation message when the user enters a city that is not part of the Romania map.
+---
+
+# License
+
+This project is licensed under the MIT License.
 
 ---
 
-## Educational Objectives
-
-This project demonstrates:
-
-- Graph modeling.
-- Weighted graphs.
-- Shortest path computation.
-- Artificial Intelligence search problems.
-- NetworkX graph library.
-- Desktop GUI development with Tkinter.
-- Event-driven programming.
-- User input validation.
-
----
-
-## Future Improvements
-
-Possible extensions include:
-
-- Interactive graph visualization.
-- Displaying the explored route on the map.
-- Manual implementation of Dijkstra's algorithm.
-- Comparison with Breadth-First Search (BFS).
-- Comparison with Depth-First Search (DFS).
-- Comparison with A* Search.
-- Animated route visualization.
-- Dynamic loading of maps from external files.
-
----
-
-## License
-
-This project is released under the MIT License.
-
----
-
-## Author
+# Author
 
 **Jose Luis Alva Salazar**
 
-Computer Systems Engineering
+Computer Engineering Student
 
-GitHub Portfolio Project
+GitHub Portfolio
